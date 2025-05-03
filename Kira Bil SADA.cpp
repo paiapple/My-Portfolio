@@ -26,9 +26,9 @@ int main() {
     blokTarif();
    
         
-    cout << "\n\nMasukkan meter semasa: ";
+    cout << "\n\nBacaan meter semasa: ";
     cin >> meterSemasa;
-    cout << "Masukkan meter dahulu: ";
+    cout << "Bacaan meter dahulu: ";
     cin >> meterDahulu;
     
     if (meterSemasa>=meterDahulu)
