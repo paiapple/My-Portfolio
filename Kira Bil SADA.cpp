@@ -1,16 +1,17 @@
-calculate SADA bill
-// simple calculate SADA bill
+// Online C++ compiler to run C++ program online
+//simply calculate SADA bill
 #include <iostream>
 using namespace std;
 
 
 void blokTarif()
     {
-        cout << "0 - 20 (1 bulan)  : Blok Purata 1= 20.000   Kadar = RM0.75 ";
-        cout << " \n21 - 35           : Blok Purata 2= 15.000   Kadar = RM1.30 ";
-        cout << "\n>35               : Blok Purata 3= 5.000    Kadar = RM1.75 ";
-    
-    }
+        cout << "\n\nBlok Tarif(m)     | Blok Prarata(m)          |Kadar RM";
+        cout << "\n0 - 20 (1 bulan)  : Blok Purata 1= RM20.000   Kadar = RM0.75 ";
+        cout << " \n21 - 35           : Blok Purata 2= RM15.000   Kadar = RM1.30 ";
+        cout << "\n>35               : Blok Purata 3= RM5.000    Kadar = RM1.75 ";
+        cout << "*********************************************** ";
+}
 
 int main() {
     // Write C++ code here
@@ -19,11 +20,11 @@ int main() {
     int totalGuna;
     float blokPurata1,blokPurata2,blokPurata3,bakiblokPurata1;
     char kadar;
-    blokTarif();
     
-    int KadarTetapPurata1 = 20;
-        blokPurata2 = 15;
-        
+    cout << "Kalkulator Bill SADA ";
+    cout << "\n*********************** ";
+    blokTarif();
+   
         
     cout << "\n\nMasukkan meter semasa: ";
     cin >> meterSemasa;
@@ -36,38 +37,52 @@ int main() {
         cout << "Jumlah kegunaan (m) bulan terkini: " << totalGuna;
     }else
     {
-        cout << "\nTak mungkin tak guna air :p ";
+        cout << "\ntak guna air ke? :p ";
     }
-        //cout << "\nAmaun Blok Purata 1: " <<blokPurata1;
-        
-
-        
-        //cout << "\nAmaun Blok Purata 1: " <<blokPurata1;
-        //cout << "\nAmaun Blok Purata 2: " <<blokPurata2;
-        //blokPurata3 = totalGuna - 35;
-        //cout << "\nAmaun Blok Purata 3: " <<blokPurata3;
             
-        if(totalGuna<=20)
-        {
-            cout << "\nAmaun Blok Purata 1: " <<totalGuna;
-            }
-            else if(totalGuna>=20 && totalGuna<=35)
-            {
-                blokPurata1 = 20;
-                cout << "\nAmaun Blok Purata 1: " <<blokPurata1;
-                blokPurata2 = totalGuna-blokPurata1;
-                cout << "\nAmaun Blok Purata 2: " <<blokPurata2;
-            }else 
-            {
-                blokPurata1 = 20;
-                cout << "\nAmaun Blok Purata 1: " <<blokPurata1;
-                blokPurata2 = 15;
-                cout << "\nAmaun Blok Purata 2: " <<blokPurata2;
-                blokPurata3 = totalGuna - 35;
-                cout << "\nAmaun Blok Purata 3: " <<blokPurata3;
-            }
+    if(totalGuna<=20)
+    {
+        cout << "\n\nAmaun Blok Prarata 1: RM" <<totalGuna;
+            
+        float kadar1=totalGuna * 0.75;
+        cout << "\nTotal Bil Sada: RM" <<kadar1;
+            
+    }
+    else if(totalGuna>=20 && totalGuna<=35)
+    {
+        blokPurata1 = 20;
+        float kadar1=blokPurata1 * 0.75;
+        cout << "\n\nAmaun Blok Prarata 1: RM" <<blokPurata1;
+        cout << "\nAmaun Kadar 1: RM" <<kadar1;
         
-
-    
+        blokPurata2 = totalGuna-blokPurata1;
+        float kadar2=blokPurata2 * 1.30;
+        cout << "\nAmaun Blok Prarata 2: RM" <<blokPurata2;
+        cout << "\nAmaun Kadar 2: RM" <<kadar2;
+                
+        float total2=kadar1+kadar2;
+        cout << "\n\nTotal Bil Sada: RM" <<total2;
+    }
+    else 
+    {
+        blokPurata1 = 20;
+        float kadar1=blokPurata1 * 0.75;
+        cout << "\n\nAmaun Blok Prarata 1: RM" <<blokPurata1;
+        cout << "\nAmaun Kadar 1: RM" <<kadar1;
+        
+        blokPurata2 = 15;
+        float kadar2=blokPurata2 * 1.30;
+        cout << "\nAmaun Blok Prarata 2: RM" <<blokPurata2;
+        cout << "\nAmaun Kadar 2: RM" <<kadar2;
+        
+        blokPurata3 = totalGuna - 35;
+        float kadar3=blokPurata3 * 1.75;
+        cout << "\nAmaun Blok Prarata 3: RM" <<blokPurata3;
+        cout << "\nAmaun Kadar 3: RM" <<kadar3;
+                
+        float total3=kadar1+kadar2+kadar3;
+        cout << "\n\nTotal Bil Sada: RM" <<total3;
+    }
+        
     return 0;
 }
